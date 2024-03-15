@@ -1,0 +1,84 @@
+BEGIN TRANSACTION;
+
+-- Insert Person 1
+INSERT INTO Persons (FirstName, MiddleName, LastName)
+VALUES ('John', 'Michael', 'Doe');
+
+-- Declare and retrieve PersonId for Person 1
+DECLARE @PersonId1 BIGINT;
+SET @PersonId1 = SCOPE_IDENTITY();
+
+-- Insert Phone number for Person 1
+INSERT INTO Phone (PhoneNumber, PersonId)
+VALUES ('555-123-4567', @PersonId1);
+
+-- Insert Address for Person 1
+INSERT INTO Address (AddressOf, PersonId)
+VALUES ('123 Main Street', @PersonId1);
+
+-- Insert BirthDate for Person 1
+INSERT INTO BirthDate (BirthDate, PersonId)
+VALUES ('1980-01-01', @PersonId1);
+
+-- Insert Person 2
+INSERT INTO Persons (FirstName, MiddleName, LastName)
+VALUES ('Jane', 'Anne', 'Smith');
+
+-- Declare and retrieve PersonId for Person 2
+DECLARE @PersonId2 BIGINT;
+SET @PersonId2 = SCOPE_IDENTITY();
+
+-- Insert Phone number for Person 2
+INSERT INTO Phone (PhoneNumber, PersonId)
+VALUES ('555-789-0123', @PersonId2);
+
+-- Insert Address for Person 2
+INSERT INTO Address (AddressOf, PersonId)
+VALUES ('456 Elm Street', @PersonId2);
+
+-- Insert BirthDate for Person 2
+INSERT INTO BirthDate (BirthDate, PersonId)
+VALUES ('1975-12-31', @PersonId2);
+
+-- Insert Person 3
+INSERT INTO Persons (FirstName, MiddleName, LastName)
+VALUES ('Terry', 'William', 'Crews');
+
+-- Declare and retrieve PersonId for Person 3
+DECLARE @PersonId3 BIGINT;
+SET @PersonId3 = SCOPE_IDENTITY();
+
+-- Insert Phone number for Person 3
+INSERT INTO Phone (PhoneNumber, PersonId)
+VALUES ('555-444-4567', @PersonId3);
+
+-- Insert Address for Person 3
+INSERT INTO Address (AddressOf, PersonId)
+VALUES ('124 Main Street', @PersonId3);
+
+-- Insert BirthDate for Person 3
+INSERT INTO BirthDate (BirthDate, PersonId)
+VALUES ('1980-11-11', @PersonId3);
+
+-- Insert Person 4
+INSERT INTO Persons (FirstName, MiddleName, LastName)
+VALUES ('David', 'James', 'Brown');
+
+-- Declare and retrieve PersonId for Person 4
+DECLARE @PersonId4 BIGINT;
+SET @PersonId4 = SCOPE_IDENTITY();
+
+-- Insert Phone number for Person 4
+INSERT INTO Phone (PhoneNumber, PersonId)
+VALUES ('555-789-0123', @PersonId4);
+
+-- Insert Address for Person 4
+INSERT INTO Address (AddressOf, PersonId)
+VALUES ('789 Oak Avenue', @PersonId4);
+
+-- Insert BirthDate for Person 4
+INSERT INTO BirthDate (BirthDate, PersonId)
+VALUES ('1975-08-20', @PersonId4);
+
+-- Commit the transaction
+COMMIT TRANSACTION;
